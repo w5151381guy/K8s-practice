@@ -4,11 +4,6 @@ const database = require('./database');
 const app = express();
 
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
 
 app.get('/api/user', async (req, res) => {
   try {
@@ -22,7 +17,6 @@ app.get('/api/user', async (req, res) => {
 
 app.post('/api/user', async (req, res) => {
   try {
-    console.log(req.body);
     const result = await database.insertData(req.body);
     res.json({ result });
   } catch (error) {
