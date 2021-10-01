@@ -20,7 +20,7 @@ const App = () => {
     e.preventDefault();
     try {
       await postData({ name, age });
-      setUsers([{ name, age }]);
+      setUsers((prev) => [...prev, { name, age }]);
       setName('');
       setAge('');
     } catch (error) {
