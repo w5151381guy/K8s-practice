@@ -1,5 +1,5 @@
 export function postData(data) {
-  const url = 'http://localhost:3000/api/user';
+  const url = '/api/user';
 
   return fetch(url, {
     method: 'POST',
@@ -9,7 +9,7 @@ export function postData(data) {
 }
 
 export function getData() {
-  const url = 'http://localhost:3000/api/user';
+  const url = '/api/user';
 
   return fetch(url).then((response) => response.json());
 }

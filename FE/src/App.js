@@ -21,6 +21,8 @@ const App = () => {
     try {
       await postData({ name, age });
       setUsers([{ name, age }]);
+      setName('');
+      setAge('');
     } catch (error) {
       console.error('[postData error]', error);
       throw error;
