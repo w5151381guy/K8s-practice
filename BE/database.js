@@ -2,6 +2,7 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const DEMO_DATABASE = 'demo';
+const DEMO_COLLECTION = 'user';
 let database;
 let collection;
 
@@ -15,7 +16,7 @@ async function main() {
     await client.connect();
 
     database = client.db(DEMO_DATABASE);
-    collection = database.collection('user');
+    collection = database.collection(DEMO_COLLECTION);
   } catch (e) {
     console.error(e);
   }
